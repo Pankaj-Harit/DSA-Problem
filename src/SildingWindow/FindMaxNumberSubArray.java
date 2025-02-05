@@ -15,22 +15,18 @@ public class FindMaxNumberSubArray {
 
     public static List<Integer> findMaxNUmbrSubArray(int[] arr, int window) {
 
-        List<Integer> result = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
         Deque<Integer> queue = new ArrayDeque<>();
 
         int start = 0, end = 0;
         while (end < arr.length) {
             //remove all the smallest element from the last
-            while (!queue.isEmpty() && queue.peekLast() < arr[end])  queue.removeLast();
+            while (!queue.isEmpty() && queue.peekLast() < arr[end]) queue.removeLast();
             queue.add(arr[end]);
 
             if (end - start + 1 == window) {
-
-                int firstElement = queue.peekFirst();
-                result.add(firstElement);
-
+                result.add(queue.peekFirst());
                 if (arr[start] == queue.peekFirst()) queue.removeFirst();
-
                 start++;
             }
 
