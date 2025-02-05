@@ -13,8 +13,8 @@ public class FindFirstNegative {
         int i = 0;
         int j = 0;
 
-        List<Integer> negativeList = new ArrayList<Integer>();
-        List<Integer> resultList = new ArrayList<Integer>();
+        List<Integer> negativeList = new ArrayList<>();
+        List<Integer> resultList = new ArrayList<>();
 
         while (j < arr.length) {
 
